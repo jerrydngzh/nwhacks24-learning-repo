@@ -5,10 +5,10 @@ import { MiMapView } from '@mappedin/react-native-sdk';
 // See Trial API key Terms and Conditions
 // https://developer.mappedin.com/guides/api-keys
 const options = {
-  clientId: '5eab30aa91b055001a68e996',
-  clientSecret: 'RJyRXKcryCMy4erZqqCbuB1NbR66QTGNXVE0x3Pg6oCIlUR1',
-  venue: 'mappedin-demo-mall',
-  perspective: 'Website',
+  clientId: '65a0422df128bbf7c7072349',
+  clientSecret: '5f72653eba818842c16c4fdb9c874ae02100ffced413f638b7bd9c65fd5b92a4',
+  venue: 'life-science-institute'
+  // perspective: 'Website',
 };
 
 const App = () => {
