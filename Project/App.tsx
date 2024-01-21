@@ -22,6 +22,26 @@ const options = {
   // venue: 'test title',
 };
 
+const LocationList = ({locations}: {locations: MappedinLocation[]}) => {
+  const renderItem: ListRenderItem<MappedinLocation> = ({item}) => (
+    <View >
+      {/* <Image source={{uri: item?.logo?.small}} style={styles.image} /> */}
+      <View >
+        <Text>{item.name}</Text>
+        {item.description && <Text >{item.description}</Text>}
+      </View>
+    </View>
+  );
+
+  return (
+    <FlatList
+      data={locations}
+      renderItem={renderItem}
+      keyExtractor={(item: any) => item.id}
+    />
+  );
+};
+
 const App = () => {
   const [venueData, setVenueData] = React.useState<Mappedin>();
 
@@ -41,13 +61,24 @@ const App = () => {
   //   );
   // }
 
+  
+  
+  const tenants = venueData.locations
+    .filter(loc => loc.type === 'tenant')
+    .sort((a, b) => (a.name > b.name ? 1 : -1));
+
+  
+
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <MiMapView
+      {/* <MiMapView
         style={{ flex: 1 }}
         key="mappedin"
         options={options}
-      />
+      /> */
+    }
+    <Text>{venueData.venue.name}</Text>
+    <LocationList locations={tenants} />
     </SafeAreaView>
   );
 };
