@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@mappedin/react-native-sdk": "^5.26.0",
+    "react-native-webview": "^13.6.4"
+  }
+}
